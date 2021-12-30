@@ -157,45 +157,45 @@ public class ReadTable {
 		
 		boolean threat=false;
 		String threatColor,friendColor;
-		if(table[n][m].getColor().equals("s")) { threatColor="b"; friendColor="s"; }
+		if(table[n][m].getColor().equals("s")) { threatColor="b"; friendColor="s"; } // kontrol edilen tasin rakip ve takim rengi belirleniyor
 		else { threatColor="s"; friendColor="b"; }
 		
-		for(int i=n+1; i<8; i++)
+		for(int i=n+1; i<8; i++) // alt dikey boyunca vezir tediti kontrolu
 		{
 			if(table[i][m].getColor().equals(friendColor) || (table[i][m].getColor().equals(threatColor) && !table[i][m].getName().equals("vezir"))) break;
 			if(table[i][m].getColor().equals(threatColor) && table[i][m].getName().equals("vezir")) return true;
 		}
-		for(int i=m+1; i<8; i++)
+		for(int i=m+1; i<8; i++) // sag yatay boyunca vezir tediti kontrolu
 		{
 			if(table[n][i].getColor().equals(friendColor) || (table[n][i].getColor().equals(threatColor) && !table[n][i].getName().equals("vezir"))) break;
 			if(table[n][i].getColor().equals(threatColor) && table[n][i].getName().equals("vezir")) return true;
 		}
-		for(int i=n-1; i>=0; i--)
+		for(int i=n-1; i>=0; i--) // ust dikey boyunca vezir tediti kontrolu
 		{
 			if(table[i][m].getColor().equals(friendColor) || (table[i][m].getColor().equals(threatColor) && !table[i][m].getName().equals("vezir"))) break;
 			if(table[i][m].getColor().equals(threatColor) && table[i][m].getName().equals("vezir")) return true;
 		}
-		for(int i=m-1; i>=0; i--)
+		for(int i=m-1; i>=0; i--) // sol yatay boyunca vezir tediti kontrolu
 		{
 			if(table[n][i].getColor().equals(friendColor) || (table[n][i].getColor().equals(threatColor) && !table[n][i].getName().equals("vezir"))) break;
 			if(table[n][i].getColor().equals(threatColor) && table[n][i].getName().equals("vezir")) return true;
 		}
-		for(int i=n+1,j=m+1; i<8 && j<8; i++,j++)
+		for(int i=n+1,j=m+1; i<8 && j<8; i++,j++) // sag alt capraz boyunca vezir tediti kontrolu
 		{
 			if(table[i][j].getColor().equals(friendColor) || (table[i][j].getColor().equals(threatColor) && !table[i][j].getName().equals("vezir"))) break;
 			if(table[i][j].getColor().equals(threatColor) && table[i][j].getName().equals("vezir")) return true;
 		}
-		for(int i=n+1,j=m-1; i<8 && j>=0; i++,j--)
+		for(int i=n+1,j=m-1; i<8 && j>=0; i++,j--) // sol alt capraz boyunca vezir tediti kontrolu
 		{
 			if(table[i][j].getColor().equals(friendColor) || (table[i][j].getColor().equals(threatColor) && !table[i][j].getName().equals("vezir"))) break;
 			if(table[i][j].getColor().equals(threatColor) && table[i][j].getName().equals("vezir")) return true;
 		}
-		for(int i=n-1,j=m+1; i>=0 && j<8; i--,j++)
+		for(int i=n-1,j=m+1; i>=0 && j<8; i--,j++) // sag ust capraz boyunca vezir tediti kontrolu
 		{
 			if(table[i][j].getColor().equals(friendColor) || (table[i][j].getColor().equals(threatColor) && !table[i][j].getName().equals("vezir"))) break;
 			if(table[i][j].getColor().equals(threatColor) && table[i][j].getName().equals("vezir")) return true;
 		}
-		for(int i=n-1,j=m-1; i>=0 && j>=0; i--,j--)
+		for(int i=n-1,j=m-1; i>=0 && j>=0; i--,j--) // sol ust capraz boyunca vezir tediti kontrolu
 		{
 			if(table[i][j].getColor().equals(friendColor) || (table[i][j].getColor().equals(threatColor) && !table[i][j].getName().equals("vezir"))) break;
 			if(table[i][j].getColor().equals(threatColor) && table[i][j].getName().equals("vezir")) return true;
