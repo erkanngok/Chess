@@ -85,21 +85,21 @@ public class ReadTable {
 		
 		if(friendColor.equals("s"))
 		{
-			if(n+1<8 && m+1<8) // Satranc tahtasi siniri
+			if(n+1<8 && m+1<8) // Satranc tahtasi SINIR kontrolu
 				if(table[n+1][m+1].getName().equals("piyon") && table[n+1][m+1].getColor().equals("b")) //sag alt caprazda beyaz piyon tedidi var mi
 					return true;
 
-			if(n+1<8 && m-1>=0) // Satranc tahtasi siniri
+			if(n+1<8 && m-1>=0) // Satranc tahtasi SINIR kontrolu
 				if(table[n+1][m-1].getName().equals("piyon") && table[n+1][m-1].getColor().equals("b")) //sol alt caprazda beyaz piyon tedidi var mi
 					return true;
 		}
 		if(friendColor.equals("b"))
 		{
-			if(n-1>=0 && m+1<8) // Satranc tahtasi siniri
+			if(n-1>=0 && m+1<8) // Satranc tahtasi SINIR kontrolu
 				if(table[n-1][m+1].getName().equals("piyon") && table[n-1][m+1].getColor().equals("s")) //sag ust caprazda siyah piyon tedidi var mi
 					return true;
 
-			if(n-1>=0 && m-1>=0) // Satranc tahtasi siniri
+			if(n-1>=0 && m-1>=0) // Satranc tahtasi SINIR kontrolu
 				if(table[n-1][m-1].getName().equals("piyon") && table[n-1][m-1].getColor().equals("s")) //sol ust caprazda siyah piyon tedidi var mi
 					return true;
 		}
